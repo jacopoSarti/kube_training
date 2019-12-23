@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-fpm-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: php-fpm
+  template:
+    metadata:
+      name: php-fpm
+      labels:
+        name: php-fpm
+    spec:
+      containers:
+        - name: php-fpm
+          image: bitnami/php-fpm
+          ports:
+          - containerPort: 9000

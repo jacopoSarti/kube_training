@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php-cli-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: php-cli
+  template:
+    metadata:
+      name: php-cli
+      labels:
+        name: php-cli
+    spec:
+      containers:
+        - name: php-cli
+          image: php:cli
+          ports:
+          - containerPort: 80

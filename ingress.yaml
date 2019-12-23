@@ -10,5 +10,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: training-deployment
+          serviceName: nginx-service
           servicePort: 80
